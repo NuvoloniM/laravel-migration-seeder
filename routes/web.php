@@ -12,7 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// pagine statiche 
+Route::get('/', 'PageController@home') ->name('home');
+Route::get('/contacts', 'PageController@contacts') ->name('contacts');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// rotta per pagina con database
+Route::get('/trains', 'TrainController@index') ->name('trains');
